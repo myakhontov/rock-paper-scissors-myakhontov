@@ -35,13 +35,15 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    transition: opacity 0.5s;
+    transition-timing-function: ease;
 }
 
 .intro h1{
     font-size: 50px;
 }
 
-.intro button{
+.intro button, .match button{
     width: 150px;
     height: 50px;
     background: none;
@@ -50,6 +52,42 @@ section{
     font-size: 20px;
     background: rgb(45,117,96);
     border-radius: 7px;
+    cursor: pointer;
 }
 
+.match{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0.5s;
+}
+
+.winner{
+    color: rgb(241, 241, 241);
+    text-align: center;
+    font-size: 50px;
+}
+
+.hands, .options{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.player-hand{
+    transform: scaleX(-1);
+}
+
+div.fadeOut{
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn{
+    opacity: 1;
+    pointer-events: all;
+}
 
